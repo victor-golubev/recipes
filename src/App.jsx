@@ -2,12 +2,7 @@ import ProductsList from "./components/ProductsList/ProductsList";
 import PublicRecipesPage from "./pages/PublicRecipesPage";
 
 function App() {
-  return (
-    <>
-      <PublicRecipesPage />
-      <ProductsList />
-    </>
-  );
+  return <></>;
 }
 
 export default App;

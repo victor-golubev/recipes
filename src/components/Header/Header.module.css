@@ -1,0 +1,12 @@
+header {
+  padding: 20px;
+}
+
+a {
+  margin: 0 15px;
+}
+
+.active {
+  color: #6d7491;
+  font-weight: bold;
+}

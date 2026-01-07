@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPublicRecipes } from "../features/recipes/recipesSlice";
+import RecipeItem from "../components/RecipeItem/RecipeItem";
 const PublicRecipesPage = () => {
   const dispatch = useDispatch();
   const {
@@ -15,12 +16,11 @@ const PublicRecipesPage = () => {
   if (error) return <p>Ошибка: {error}</p>;
   return (
     <div>
-      <h1>Публичные рецепты</h1>
-      <ul>
-        {recipes.map((recipe) => (
-          <li key={recipe.id}>{recipe.title}</li>
-        ))}
-      </ul>
+      <h1>Public Recipes</h1>
+
+      {recipes.map((recipe) => (
+        <RecipeItem recipe={recipe} key={recipe.id} />
+      ))}
     </div>
   );
 };

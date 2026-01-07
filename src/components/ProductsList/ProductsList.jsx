@@ -5,6 +5,8 @@ import {
   removeProduct,
   updateProduct,
 } from "../../features/products/productsSlice";
+import styles from "./ProductsList.module.css";
+
 const ProductsList = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.list);
@@ -47,16 +49,16 @@ const ProductsList = () => {
         />
         <button onClick={handleAddProduct}>Добавить продукт</button>
       </div>
-      <ul>
+      <div className={styles.products}>
         {products.map((product) => (
-          <li key={product.id}>
+          <div key={product.id} className={styles.product}>
             {product.name} - {product.quantity} {product.unit}
             <button onClick={() => dispatch(removeProduct(product.id))}>
               Удалить
             </button>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
